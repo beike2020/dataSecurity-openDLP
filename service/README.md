@@ -73,7 +73,7 @@ def send_request(to_analyze_file_path, user_define_pattern_file=None, thresholds
         
 		# ip和端口与sensitive_data_analyzer_server.py中设置的一致
     with grpc.insecure_channel('127.0.0.1:40051') as channel:
-        stub = sensitive_pb2_grpc.SensitiveDataAnalyzerServiceStub(channel)
+        stub = sensitive_pb2_grpc.OpenDlpServiceStub(channel)
         response = stub.SensitiveAnalyze(request)
         status = response.status
         result = response.result
@@ -131,7 +131,7 @@ def send_request(train_data_file, regex_name=None):
 
 
 data_dir = 'tests/data/regex_generation/test-data/'
-regex_names = 'ID_CARD'
+regex_name = 'ID_CARD'
 train_data_file = os.path.join(data_dir, regex_name+'.csv')
 status, result = send_request(train_data_file, regex_name)
 print(result)
