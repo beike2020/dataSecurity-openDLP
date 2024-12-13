@@ -38,7 +38,7 @@ pip install -r requirements_service.txt
 
 #### 启动服务
 
-执行 opendlp_server.py 文件启动敏感数据识别服务。
+执行 python service/opendlp_server.py 文件启动敏感数据识别服务。
 
 #### 请求服务
 
@@ -100,7 +100,7 @@ print(result)
 
 #### 启动服务
 
-执行 opendlp_server.py 文件启动敏感数据识别服务。
+执行 python service/opendlp_server.py 文件启动敏感数据识别服务。
 
 #### 请求服务
 
